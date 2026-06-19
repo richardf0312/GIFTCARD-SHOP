@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ingresar | GiftCardHub</title>
+    <title>GiftCardHub | Game passes y tarjetas</title>
     <style>
 :root {
     --ink: #121318;
@@ -1518,22 +1518,139 @@ tr:last-child td {
     }
 }
 </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="auth-body">
-    <main class="auth-container">
-        <section class="auth-card">
-            <h2 class="text-accent">GiftCardHub</h2>
-            <p>Ingresa para acceder a tu saldo y pedidos.</p>
-            <div id="auth-alert" class="alert error hidden"></div>
-            <form id="auth-form" data-mode="login">
-                <input type="text" id="auth-email" name="email" inputmode="email" placeholder="Email" required>
-                <input type="password" id="auth-password" name="password" placeholder="Password" required>
-                <button type="submit" class="cta-button full-width">Ingresar</button>
-            </form>
-            <p class="auth-footer">No tienes cuenta? <a href="register.html">Registrate</a></p>
-            <p class="auth-footer"><a href="index.html">Volver a la tienda</a></p>
-        </section>
+<body class="page-shell">
+    <header class="dk-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand" aria-label="GiftCardHub">
+                <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
+                GiftCard<span>Hub</span>
+            </a>
+
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Buscar Steam, Xbox, Robux, Netflix...">
+                <button class="search-icon-btn" type="button" aria-label="Buscar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="user-actions">
+                <a href="dashboard.html" id="account-link" class="header-pill-btn btn-wallet" title="Mi panel">
+                    <i class="fa-solid fa-wallet"></i>
+                    <span id="header-balance">$0.00</span>
+                </a>
+                <a href="login.html" id="login-link" class="header-pill-btn btn-ghost">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Ingresar</span>
+                </a>
+                <a href="register.html" id="register-link" class="header-pill-btn btn-ghost">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span>Crear cuenta</span>
+                </a>
+                <a href="checkout.html" class="header-pill-btn btn-cart" title="Carrito">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-wrapper">
+        <div class="hero-grid">
+            <div class="hero-main">
+                <div class="hero-text">
+                    <span class="hero-tag"><i class="fa-solid fa-fire"></i> Drops digitales activos</span>
+                    <h1>GiftCardHub</h1>
+                    <p>Game Pass, Robux, V-Bucks, gift cards y codigos globales en una tienda directa, rapida y lista para Netlify.</p>
+                    <div class="hero-actions">
+                        <a href="#catalogo" class="cta-button"><i class="fa-solid fa-arrow-down"></i> Ver catalogo</a>
+                        <a href="topup.html" class="button-secondary"><i class="fa-solid fa-plus"></i> Recargar saldo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-side">
+                <a href="#catalogo" class="hero-promo promo-1">
+                    <div>
+                        <span class="mini-label">Minecraft</span>
+                        <strong>PC keys y tarjetas con descuento</strong>
+                    </div>
+                </a>
+                <a href="#catalogo" class="hero-promo promo-2">
+                    <div>
+                        <span class="mini-label">Roblox</span>
+                        <strong>Robux listos para vender</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <nav class="platform-bar" id="platform-filters" aria-label="Filtros de plataforma">
+        <button class="platform-pill active" type="button" data-platform="all"><i class="fa-solid fa-border-all"></i> Todo</button>
+        <button class="platform-pill" type="button" data-platform="steam"><i class="fa-brands fa-steam"></i> Steam</button>
+        <button class="platform-pill" type="button" data-platform="xbox"><i class="fa-brands fa-xbox"></i> Xbox</button>
+        <button class="platform-pill" type="button" data-platform="playstation"><i class="fa-brands fa-playstation"></i> PSN</button>
+        <button class="platform-pill" type="button" data-platform="tarjeta"><i class="fa-solid fa-gift"></i> Tarjetas</button>
+    </nav>
+
+    <div class="shop-heading" id="catalogo">
+        <div>
+            <span class="eyebrow">Catalogo vivo</span>
+            <h2>Productos destacados</h2>
+        </div>
+    </div>
+
+    <main class="shop-container">
+        <div class="shop-layout">
+            <aside class="shop-panel">
+                <h3>Accesos rapidos</h3>
+                <div class="deal-list">
+                    <button class="deal-chip" type="button" data-search-shortcut="game pass">
+                        <strong>Game Pass</strong>
+                        <span>Suscripciones Xbox y PC</span>
+                    </button>
+                    <button class="deal-chip" type="button" data-search-shortcut="gift card">
+                        <strong>Gift cards</strong>
+                        <span>Steam, Amazon, Apple y Netflix</span>
+                    </button>
+                    <button class="deal-chip" type="button" data-search-shortcut="v-bucks">
+                        <strong>V-Bucks</strong>
+                        <span>Recargas Fortnite</span>
+                    </button>
+                </div>
+            </aside>
+
+            <section>
+                <div class="products-grid" id="products-grid">
+                    <div class="empty-state">Cargando catalogo...</div>
+                </div>
+            </section>
+        </div>
     </main>
+
+    <footer class="big-footer">
+        <div class="footer-content-wrapper">
+            <div class="footer-columns">
+                <div class="footer-link-list">
+                    <h4>GiftCardHub</h4>
+                    <a href="dashboard.html">Mi panel</a>
+                    <a href="topup.html">Recargar saldo</a>
+                    <a href="checkout.html">Carrito</a>
+                </div>
+                <div class="footer-link-list">
+                    <h4>Plataformas</h4>
+                    <a href="#catalogo">Xbox</a>
+                    <a href="#catalogo">Steam</a>
+                    <a href="#catalogo">PlayStation</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>GiftCardHub demo estatica para Netlify.</span>
+                <span>Pagos: BTC, LTC, USDT y transferencia MX.</span>
+            </div>
+        </div>
+    </footer>
     <script>
 window.GIFTCARDHUB_POCKETBASE = {
     url: "https://giftcardhubapi.duckdns.org",
@@ -3052,37 +3169,145 @@ window.GIFTCARDHUB_POCKETBASE = {
 
 </script>
     <script>
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const store = window.DigitalKeysStore;
-    const form = document.getElementById("auth-form");
-    const email = document.getElementById("auth-email");
-    const password = document.getElementById("auth-password");
-    const alertBox = document.getElementById("auth-alert");
-    const adminUser = "ADMIN";
-    const adminPassword = "ADMIN0312";
+    const productsGrid = document.getElementById("products-grid");
+    const searchInput = document.getElementById("search-input");
+    const cartCount = document.getElementById("cart-count");
+    const balanceEl = document.getElementById("header-balance");
+    const accountLink = document.getElementById("account-link");
+    const loginLink = document.getElementById("login-link");
+    const registerLink = document.getElementById("register-link");
+    const platformFilters = document.getElementById("platform-filters");
+    const filterButtons = platformFilters ? platformFilters.querySelectorAll(".platform-pill") : [];
+    const shortcutButtons = document.querySelectorAll("[data-search-shortcut]");
 
-    form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        try {
-            const typedUser = email.value.trim().toUpperCase();
-            const typedPassword = password.value.trim().toUpperCase();
-            if (form.dataset.mode === "login" && typedUser === adminUser && typedPassword === adminPassword) {
-                await store.loginAdmin(password.value);
-                window.location.href = "adminpanelconfig.html";
-                return;
-            }
+    let allProducts = await store.getProducts();
+    let currentFilter = "all";
 
-            if (form.dataset.mode === "register") {
-                await store.registerUser(email.value, password.value);
-            } else {
-                await store.loginUser(email.value, password.value);
-            }
-            window.location.href = "dashboard.html";
-        } catch (error) {
-            alertBox.textContent = error.message;
-            alertBox.classList.remove("hidden");
+    function platformMatches(product, filter) {
+        const platform = product.platform.toLowerCase();
+        const name = product.name.toLowerCase();
+        if (filter === "all") return true;
+        if (filter === "tarjeta") {
+            return ["tarjeta", "roblox", "fortnite", "amazon", "netflix", "apple", "free fire", "otro"]
+                .some((entry) => platform.includes(entry) || name.includes(entry));
         }
+        if (filter === "playstation") {
+            return platform.includes("playstation") || platform.includes("psn");
+        }
+        return platform.includes(filter);
+    }
+
+    function filterAndDisplay() {
+        const searchTerm = (searchInput?.value || "").trim().toLowerCase();
+        const filtered = allProducts.filter((product) => {
+            const target = `${product.name} ${product.platform} ${product.duration}`.toLowerCase();
+            return target.includes(searchTerm) && platformMatches(product, currentFilter);
+        });
+        displayProducts(filtered);
+    }
+
+    function displayProducts(products) {
+        productsGrid.innerHTML = "";
+        if (products.length === 0) {
+            productsGrid.innerHTML = `<div class="empty-state">No hay productos para este filtro.</div>`;
+            return;
+        }
+
+        products.forEach((product) => {
+            const productCard = document.createElement("article");
+            productCard.className = "product-card";
+            const hasDiscount = product.price_before && Number(product.price_before) > Number(product.price);
+            const discount = hasDiscount
+                ? Math.round(((product.price_before - product.price) / product.price_before) * 100)
+                : 0;
+
+            productCard.innerHTML = `
+                ${hasDiscount ? `<div class="discount-badge">-${discount}%</div>` : ""}
+                <div class="stock-badge">${product.stock} uds</div>
+                <div class="product-image">
+                    <img src="${product.image_url}" alt="${product.name}" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-platform">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <span>${product.platform} | ${product.duration}</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price-box">
+                            ${hasDiscount ? `<span class="price-old">${store.formatMoney(product.price_before)}</span>` : ""}
+                            <span class="price-new">${store.formatMoney(product.price)}</span>
+                        </div>
+                        <button class="btn-card-add" type="button" data-id="${product.id}" aria-label="Agregar ${product.name}">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            productsGrid.appendChild(productCard);
+        });
+    }
+
+    async function updateHeader() {
+        const cart = store.getCart();
+        const totalItems = cart.reduce((sum, item) => sum + Number(item.quantity || 0), 0);
+        if (cartCount) cartCount.textContent = totalItems;
+        if (balanceEl) balanceEl.textContent = store.formatMoney(await store.getBalance());
+        const logged = await store.isAuthenticated();
+        accountLink?.classList.toggle("hidden", !logged);
+        loginLink?.classList.toggle("hidden", logged);
+        registerLink?.classList.toggle("hidden", logged);
+    }
+
+    filterButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            filterButtons.forEach((item) => item.classList.remove("active"));
+            btn.classList.add("active");
+            currentFilter = btn.dataset.platform;
+            filterAndDisplay();
+        });
     });
+
+    shortcutButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            if (!searchInput) return;
+            searchInput.value = btn.dataset.searchShortcut;
+            currentFilter = "all";
+            filterButtons.forEach((item) => item.classList.toggle("active", item.dataset.platform === "all"));
+            filterAndDisplay();
+            document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    searchInput?.addEventListener("input", filterAndDisplay);
+
+    productsGrid.addEventListener("click", async (event) => {
+        const button = event.target.closest(".btn-card-add");
+        if (!button) return;
+        const product = await store.addToCart(button.dataset.id);
+        if (!product) return;
+        await updateHeader();
+        const previous = button.innerHTML;
+        button.innerHTML = `<i class="fa-solid fa-check"></i>`;
+        button.style.backgroundColor = "var(--green)";
+        setTimeout(() => {
+            button.innerHTML = previous;
+            button.style.backgroundColor = "";
+        }, 850);
+    });
+
+    window.addEventListener("storage", async () => {
+        allProducts = await store.getProducts();
+        await updateHeader();
+        filterAndDisplay();
+    });
+
+    await updateHeader();
+    filterAndDisplay();
 });
     </script>
 </body>

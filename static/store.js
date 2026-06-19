@@ -11,9 +11,9 @@
         pendingPayment: "dk_pending_payment_v2"
     };
 
-    const SUPABASE_CONFIG = window.GIFTCARDHUB_SUPABASE || {};
-    const POCKETBASE_CONFIG = window.GIFTCARDHUB_POCKETBASE || {};
-    const PB_AUTH_KEY = "giftcardhub_pb_auth_v1";
+    const SUPABASE_CONFIG = window.ARZKEYS_SUPABASE || {};
+    const POCKETBASE_CONFIG = window.ARZKEYS_POCKETBASE || {};
+    const PB_AUTH_KEY = "arzkeys_pb_auth_v1";
     let supabaseClient = null;
 
     function hasSupabase() {
@@ -752,7 +752,7 @@
 
     async function loginAdmin(password) {
         if (hasPocketBase()) {
-            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@giftcardhub.local");
+            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@arzkeys.local");
             const data = await pbRequest("/api/collections/users/auth-with-password", {
                 method: "POST",
                 body: JSON.stringify({
