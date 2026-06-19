@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GiftCardHub | Game passes y tarjetas</title>
+    <title>ARZKEYS | Game passes y tarjetas</title>
     <style>
 :root {
     --ink: #0a0a0b;
@@ -1681,7 +1681,7 @@ tr:last-child td {
 <body class="page-shell">
     <header class="dk-header">
         <div class="header-inner">
-            <a href="index.html" class="brand" aria-label="GiftCardHub">
+            <a href="index.html" class="brand" aria-label="ARZKEYS">
                 <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
                 GiftCard<span>Hub</span>
             </a>
@@ -1719,7 +1719,7 @@ tr:last-child td {
             <div class="hero-main">
                 <div class="hero-text">
                     <span class="hero-tag"><i class="fa-solid fa-fire"></i> Drops digitales activos</span>
-                    <h1>GiftCardHub</h1>
+                    <h1>ARZKEYS</h1>
                     <p>Game Pass, Robux, V-Bucks, gift cards y codigos globales en una tienda directa, rapida y lista para Netlify.</p>
                     <div class="hero-actions">
                         <a href="#catalogo" class="cta-button"><i class="fa-solid fa-arrow-down"></i> Ver catalogo</a>
@@ -1791,7 +1791,7 @@ tr:last-child td {
         <div class="footer-content-wrapper">
             <div class="footer-columns">
                 <div class="footer-link-list">
-                    <h4>GiftCardHub</h4>
+                    <h4>ARZKEYS</h4>
                     <a href="dashboard.html">Mi panel</a>
                     <a href="topup.html">Recargar saldo</a>
                     <a href="checkout.html">Carrito</a>
@@ -1804,15 +1804,15 @@ tr:last-child td {
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>GiftCardHub demo estatica para Netlify.</span>
+                <span>ARZKEYS demo estatica para Netlify.</span>
                 <span>Pagos: BTC, LTC, USDT y transferencia MX.</span>
             </div>
         </div>
     </footer>
     <script>
-window.GIFTCARDHUB_POCKETBASE = {
-    url: "https://giftcardhubapi.duckdns.org",
-    adminEmail: "admin@giftcardhub.local"
+window.ARZKEYS_POCKETBASE = {
+    url: "https://arzkeysapi.duckdns.org",
+    adminEmail: "admin@arzkeys.local"
 };
     </script>
     <script>
@@ -1829,9 +1829,9 @@ window.GIFTCARDHUB_POCKETBASE = {
         pendingPayment: "dk_pending_payment_v2"
     };
 
-    const SUPABASE_CONFIG = window.GIFTCARDHUB_SUPABASE || {};
-    const POCKETBASE_CONFIG = window.GIFTCARDHUB_POCKETBASE || {};
-    const PB_AUTH_KEY = "giftcardhub_pb_auth_v1";
+    const SUPABASE_CONFIG = window.ARZKEYS_SUPABASE || {};
+    const POCKETBASE_CONFIG = window.ARZKEYS_POCKETBASE || {};
+    const PB_AUTH_KEY = "arzkeys_pb_auth_v1";
     let supabaseClient = null;
 
     function hasSupabase() {
@@ -2570,7 +2570,7 @@ window.GIFTCARDHUB_POCKETBASE = {
 
     async function loginAdmin(password) {
         if (hasPocketBase()) {
-            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@giftcardhub.local");
+            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@arzkeys.local");
             const data = await pbRequest("/api/collections/users/auth-with-password", {
                 method: "POST",
                 body: JSON.stringify({

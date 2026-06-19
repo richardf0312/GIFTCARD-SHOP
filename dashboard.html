@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi panel | GiftCardHub</title>
+    <title>Mi panel | ARZKEYS</title>
     <style>
 :root {
     --ink: #121318;
@@ -1627,9 +1627,9 @@ tr:last-child td {
         <span>Soporte</span>
     </a>
     <script>
-window.GIFTCARDHUB_POCKETBASE = {
-    url: "https://giftcardhubapi.duckdns.org",
-    adminEmail: "admin@giftcardhub.local"
+window.ARZKEYS_POCKETBASE = {
+    url: "https://arzkeysapi.duckdns.org",
+    adminEmail: "admin@arzkeys.local"
 };
     </script>
     <script>
@@ -1646,9 +1646,9 @@ window.GIFTCARDHUB_POCKETBASE = {
         pendingPayment: "dk_pending_payment_v2"
     };
 
-    const SUPABASE_CONFIG = window.GIFTCARDHUB_SUPABASE || {};
-    const POCKETBASE_CONFIG = window.GIFTCARDHUB_POCKETBASE || {};
-    const PB_AUTH_KEY = "giftcardhub_pb_auth_v1";
+    const SUPABASE_CONFIG = window.ARZKEYS_SUPABASE || {};
+    const POCKETBASE_CONFIG = window.ARZKEYS_POCKETBASE || {};
+    const PB_AUTH_KEY = "arzkeys_pb_auth_v1";
     let supabaseClient = null;
 
     function hasSupabase() {
@@ -2387,7 +2387,7 @@ window.GIFTCARDHUB_POCKETBASE = {
 
     async function loginAdmin(password) {
         if (hasPocketBase()) {
-            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@giftcardhub.local");
+            const adminEmail = normalizeEmail(POCKETBASE_CONFIG.adminEmail || "admin@arzkeys.local");
             const data = await pbRequest("/api/collections/users/auth-with-password", {
                 method: "POST",
                 body: JSON.stringify({
